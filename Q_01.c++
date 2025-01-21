@@ -1,26 +1,29 @@
-// Online C++ compiler to run C++ program online
 #include <iostream>
 #include <string>
 using namespace std;
-string check(int number){
-    if(number > 0){
-        return "Positive";
+
+string grade(int score){
+    if((score >= 90) && (score <= 100)){
+        return "A";
     }
-    else if(number < 0){
-        return "Negetive";
+    else if((score >=70) && (score < 90)){
+        return "B";
+    }
+    else if((score >= 50) && (score < 70)){
+        return "C";
+    }
+    else if((score >= 33) && (score < 50)){
+        return "D";
+    }
+    else if((score >= 0) && (score < 33)){
+        return "F";
     }
     else{
-        return "Zero";
+        return "Invalid score";
     }
 }
 
-
-
-int main() {
-    int number;
-    cout << "Enter a number : ";
-    cin >> number;
-    
-    string result = check(number);
-    cout << result;
+int main(){
+    int score = 85;
+    cout << grade(score) << endl;
 }
